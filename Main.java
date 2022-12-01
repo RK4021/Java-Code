@@ -1,20 +1,31 @@
+import com.queue.CircularQueue;
 import com.queue.MyQueue;
 
 public class Main {
     public static void main(String[] args)  {
 
-        MyQueue<Integer> myqueue = new MyQueue<>();   // I took size value of 5 for array
+        CircularQueue<Integer> circularQueue = new CircularQueue(5);
 
-        myqueue.enqueue(100);
-        myqueue.enqueue(200);
-        myqueue.enqueue(300);
-        myqueue.enqueue(300);
-        myqueue.enqueue(300);
+        circularQueue.enqueue(100);
+        circularQueue.enqueue(200);
+        circularQueue.enqueue(300);
+        circularQueue.enqueue(400);
+        circularQueue.enqueue(500);
 
-        System.out.println(myqueue.isEmpty());
-        System.out.println(myqueue.isFull());
+        System.out.println(circularQueue.isFull());
 
-        myqueue.print();
+        circularQueue.dequeue();
+        circularQueue.dequeue();
+        circularQueue.dequeue();
+        circularQueue.dequeue();
+        circularQueue.dequeue();
+
+        circularQueue.enqueue(300);
+        circularQueue.enqueue(400);
+        circularQueue.enqueue(500);
+
+        System.out.println(circularQueue);
+
 
     }
 
